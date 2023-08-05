@@ -220,7 +220,7 @@ int main()
                     cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
                     break;
                 case 9:
-                    row3[2]='X';
+                    row3[2]='Y';
                     cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
                     cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
                     cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
