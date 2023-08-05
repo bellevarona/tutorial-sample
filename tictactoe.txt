@@ -1,0 +1,233 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    char row1[3] = {'1','2','3'};
+    char row2[3] = {'4','5','6'};
+    char row3[3] = {'7','8','9'};
+    bool isP1Winner = false;
+    bool isP2Winner = false;
+    bool playerTurn = true;
+    
+    //display the board
+    
+    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+    
+    while(!isP1Winner && !isP2Winner){
+        //check if any row has all O's
+        if(row1[0]=='O' && row1[1]=='O' && row1[2]=='O'){
+            isP1Winner = true;
+            break;
+        }
+        if(row2[0]=='O' && row2[1]=='O' && row2[2]=='O'){
+            isP1Winner = true;
+            break;
+        }
+        if(row3[0]=='O' && row3[1]=='O' && row3[2]=='O'){
+            isP1Winner = true;
+            break;
+        }
+        
+        //check if any row has all X's
+        if(row1[0]=='X' && row1[1]=='X' && row1[2]=='X'){
+            isP2Winner = true;
+            break;
+        }
+        if(row2[0]=='X' && row2[1]=='X' && row2[2]=='X'){
+            isP2Winner = true;
+            break;
+        }
+        if(row3[0]=='X' && row3[1]=='X' && row3[2]=='X'){
+            isP2Winner = true;
+            break;
+        }
+        
+        //check if any column has all O's
+        if(row1[0]=='O' && row2[0]=='O' && row3[0]=='O'){
+            isP1Winner = true;
+            break;
+        }
+        if(row1[1]=='O' && row2[1]=='O' && row3[1]=='O'){
+            isP1Winner = true;
+            break;
+        }
+        if(row1[2]=='O' && row2[2]=='O' && row3[2]=='O'){
+            isP1Winner = true;
+            break;
+        }
+        
+        //check if any column has all X's
+        if(row1[0]=='X' && row2[0]=='X' && row3[0]=='X'){
+            isP1Winner = true;
+            break;
+        }
+        if(row1[1]=='X' && row2[1]=='X' && row3[1]=='X'){
+            isP1Winner = true;
+            break;
+        }
+        if(row1[2]=='X' && row2[2]=='X' && row3[2]=='X'){
+            isP1Winner = true;
+            break;
+        }
+        
+        // check if any diagonals are all O's
+        if(row1[0]=='O' && row2[1]=='O' && row3[2]=='O'){
+            isP1Winner = true;
+            break;
+        }
+        if(row1[2]=='O' && row2[1]=='O' && row3[0]=='O'){
+            isP1Winner = true;
+            break;
+        }
+        
+        // check if any diagonals are all X's
+        if(row1[0]=='X' && row2[1]=='X' && row3[2]=='X'){
+            isP1Winner = true;
+            break;
+        }
+        if(row1[2]=='X' && row2[1]=='X' && row3[0]=='X'){
+            isP1Winner = true;
+            break;
+        }
+        
+        if(playerTurn){
+            int p1;
+            cout<<"Player 1's move: ";
+            cin>>p1;
+            
+            switch(p1){
+                case 1:
+                    row1[0]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 2:
+                    row1[1]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 3:
+                    row1[2]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 4:
+                    row2[0]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 5:
+                    row2[1]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 6:
+                    row2[2]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 7:
+                    row3[0]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 8:
+                    row3[1]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 9:
+                    row3[2]='O';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+            }
+        }
+        
+        else if(!playerTurn){
+            int p2;
+            cout<<"Player 2's move: ";
+            cin>>p2;
+            
+            switch(p2){
+                case 1:
+                    row1[0]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 2:
+                    row1[1]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 3:
+                    row1[2]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 4:
+                    row2[0]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 5:
+                    row2[1]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 6:
+                    row2[2]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 7:
+                    row3[0]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 8:
+                    row3[1]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+                case 9:
+                    row3[2]='X';
+                    cout<<row1[0]<<" "<<row1[1]<<" "<<row1[2]<<"\n";
+                    cout<<row2[0]<<" "<<row2[1]<<" "<<row2[2]<<"\n";
+                    cout<<row3[0]<<" "<<row3[1]<<" "<<row3[2]<<"\n";
+                    break;
+            }
+        }
+        playerTurn = !playerTurn;
+    }
+    return 0;
+}
